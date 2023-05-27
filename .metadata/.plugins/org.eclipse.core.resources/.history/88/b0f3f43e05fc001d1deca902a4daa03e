@@ -1,0 +1,23 @@
+package postgresqlOrnek;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class veritabanı {
+	static String url = "jdbc:postgresql://localhost:5432/deneme";
+	static Connection conn =null;
+	
+	static void baglan(){
+		try {
+			conn = DriverManager.getConnection(url,"postgres","12345");
+			System.out.println("Bağlantı gerçekleştirildi.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	static ResultSet listele() {
+		
+	}
+}
