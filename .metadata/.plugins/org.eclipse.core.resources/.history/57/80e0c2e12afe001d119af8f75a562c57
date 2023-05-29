@@ -19,8 +19,8 @@ public class veritabanı {
 	public static void main(String[] args) {
 
         String url = "jdbc:postgresql://localhost:5432/deneme";
-        String user = "root";
-        String password = "5432";
+        String user = "postgre";
+        String password = "12345";
 
         try {
             Class.forName("org.postgresql.Driver");

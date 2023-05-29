@@ -19,7 +19,7 @@ public class veritabanı {
 	public static void main(String[] args) {
 
         String url = "jdbc:postgresql://localhost:5432/deneme";
-        String user = "root";
+        String user = "postgre";
         String password = "5432";
 
         try {

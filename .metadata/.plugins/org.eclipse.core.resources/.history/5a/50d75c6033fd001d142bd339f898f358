@@ -1,0 +1,33 @@
+package postgresqlOrnek;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class veritabanı {
+	static String url = "jdbc:postgresql://localhost:5432/deneme";
+	static Connection conn =null;
+	
+	static void baglan(){
+		try {
+			conn = DriverManager.getConnection(url,"postgres","12345");
+			System.out.println("Bağlantı gerçekleştirildi.");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	static ResultSet listele(String sorgu) {
+		try {
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(sorgu);
+			return rs;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+}

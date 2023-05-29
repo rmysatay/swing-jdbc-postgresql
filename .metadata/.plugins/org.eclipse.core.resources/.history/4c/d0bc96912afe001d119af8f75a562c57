@@ -19,19 +19,17 @@ public class veritabanı {
 	public static void main(String[] args) {
 
         String url = "jdbc:postgresql://localhost:5432/deneme";
-        String user = "root";
-        String password = "5432";
 
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("com.sql.jdbc.Driver");
 
-            Connection connection = DriverManager.getConnection(url,user,password);
+            Connection connection = DriverManager.getConnection(url);
 
             Statement statement = connection.createStatement();
 
             String sql = "INSERT INTO "
-                    + "kisiler(kisi_adi, kisi_soyadi) "
-                    + "VALUES('Emirhan', 'Doğandemir')";
+                    + "kisiler(kisi_adi, kisi_soyadi, kisi_eposta) "
+                    + "VALUES('Yusuf', 'SEZER', 'yusufsezer@mail.com')";
 
             System.out.println(statement.executeUpdate(sql) + " kayıt eklendi.");
 
